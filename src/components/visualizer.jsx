@@ -79,7 +79,7 @@ export default class Visualizer extends React.Component {
           sort={this.sort}
         ></Controls> */}
         <div className="controls-container">
-          <button onClick={this.resetArray}>Generate new array</button>
+          <button onClick={this.resetArray}>New array</button>
           <div className="algo-options-container">
             <div className="algo-option">
               <input
@@ -169,20 +169,18 @@ export default class Visualizer extends React.Component {
         this.countingSort();
         break;
     }
-    document.getElementsByClassName(
-      "algo-options-container"
-    )[0].style.visibility = "visibile";
   }
 
   countingSort() {
-    console.log(this.state.array);
+    //console.log(this.state.array);
     const animations = animateCountingSort(this.state.array, MAX);
 
-    console.log(this.state.array);
+    //console.log(this.state.array);
 
     const mainArray = document.getElementsByClassName("main-array-bar");
     const tempArray = document.getElementsByClassName("temp-array-bar");
     const count = document.getElementsByClassName("temp-array-text");
+    const controls = document.getElementsByClassName("controls-container");
 
     //parseInt(value) + 1
 
@@ -190,6 +188,19 @@ export default class Visualizer extends React.Component {
       const [action, index1, index2] = animations[i];
 
       switch (action) {
+        case "begin":
+          setTimeout(() => {
+            //controls[0].style.opacity = "0";
+            controls[0].style.visibility = "hidden";
+          }, i * ANIMATION_SPEED);
+          break;
+        case "finish":
+          setTimeout(() => {
+            //controls[0].style.opacity = "1";
+            controls[0].style.visibility = "initial";
+            console.log("finished");
+          }, i * ANIMATION_SPEED);
+          break;
         case "initCount":
           setTimeout(() => {
             for (let i = 0; i < MAX; i++) {
@@ -243,16 +254,29 @@ export default class Visualizer extends React.Component {
       }
     }
   }
-
   quickSort() {
     const animations = animateQuickSort(this.state.array);
 
     const mainArray = document.getElementsByClassName("main-array-bar");
+    const controls = document.getElementsByClassName("controls-container");
 
     for (let i = 0; i < animations.length; i++) {
       const [action, index1, index2] = animations[i];
       //console.log(`${action} / ${index1} / ${index2}`);
       switch (action) {
+        case "begin":
+          setTimeout(() => {
+            //controls[0].style.opacity = "0";
+            controls[0].style.visibility = "hidden";
+          }, i * ANIMATION_SPEED);
+          break;
+        case "finish":
+          setTimeout(() => {
+            //controls[0].style.opacity = "1";
+            controls[0].style.visibility = "initial";
+            console.log("finished");
+          }, i * ANIMATION_SPEED);
+          break;
         case "setBoundary":
           setTimeout(() => {
             console.log(`setBoundary + ${index1} + ${index2}`);
@@ -266,13 +290,13 @@ export default class Visualizer extends React.Component {
         case "setPivot":
           setTimeout(() => {
             console.log(`setPivot ${index1}`);
-            mainArray[index1].style.backgroundColor = "pink";
+            mainArray[index1].style.backgroundColor = COLOUR_3;
           }, i * ANIMATION_SPEED);
           break;
         case "curr":
           setTimeout(() => {
             console.log(`curr ${index1}`);
-            mainArray[index1].style.backgroundColor = "yellow";
+            mainArray[index1].style.backgroundColor = COLOUR_3;
           }, i * ANIMATION_SPEED);
           break;
         case "swap":
@@ -297,13 +321,13 @@ export default class Visualizer extends React.Component {
         case "greaterThan":
           setTimeout(() => {
             console.log(`greaterThan ${index1}`);
-            mainArray[index1].style.backgroundColor = "red";
+            mainArray[index1].style.backgroundColor = "#bf1347";
           }, i * ANIMATION_SPEED);
           break;
         case "smallerThan":
           setTimeout(() => {
             console.log(`smallerThan ${index1}`);
-            mainArray[index1].style.backgroundColor = "green";
+            mainArray[index1].style.backgroundColor = "#ff5286";
           }, i * ANIMATION_SPEED);
           break;
         case "resetBoundary":
@@ -322,11 +346,25 @@ export default class Visualizer extends React.Component {
     const animations = animateBubbleSort(this.state.array);
 
     const mainArray = document.getElementsByClassName("main-array-bar");
+    const controls = document.getElementsByClassName("controls-container");
 
     for (let i = 0; i < animations.length; i++) {
       const [action, index1, index2] = animations[i];
 
       switch (action) {
+        case "begin":
+          setTimeout(() => {
+            //controls[0].style.opacity = "0";
+            controls[0].style.visibility = "hidden";
+          }, i * ANIMATION_SPEED);
+          break;
+        case "finish":
+          setTimeout(() => {
+            //controls[0].style.opacity = "1";
+            controls[0].style.visibility = "initial";
+            console.log("finished");
+          }, i * ANIMATION_SPEED);
+          break;
         case "changeColour":
           setTimeout(() => {
             mainArray[index1].style.backgroundColor = COLOUR_2;
@@ -356,11 +394,25 @@ export default class Visualizer extends React.Component {
 
     const mainArray = document.getElementsByClassName("main-array-bar");
     const tempArray = document.getElementsByClassName("temp-array-bar");
+    const controls = document.getElementsByClassName("controls-container");
 
     for (let i = 0; i < animations.length; i++) {
       const [action, index1, index2] = animations[i];
 
       switch (action) {
+        case "begin":
+          setTimeout(() => {
+            //controls[0].style.opacity = "0";
+            controls[0].style.visibility = "hidden";
+          }, i * ANIMATION_SPEED);
+          break;
+        case "finish":
+          setTimeout(() => {
+            //controls[0].style.opacity = "1";
+            controls[0].style.visibility = "initial";
+            console.log("finished");
+          }, i * ANIMATION_SPEED);
+          break;
         case "setBoundary":
           setTimeout(() => {
             for (let i = 0; i < NUM_ELEMENTS; i++) {
@@ -420,10 +472,24 @@ export default class Visualizer extends React.Component {
 
     const mainArray = document.getElementsByClassName("main-array-bar");
     const tempArray = document.getElementsByClassName("temp-array-bar");
+    const controls = document.getElementsByClassName("controls-container");
 
     for (let i = 0; i < animations.length; i++) {
       const [action, index] = animations[i];
       switch (action) {
+        case "begin":
+          setTimeout(() => {
+            //controls[0].style.opacity = "0";
+            controls[0].style.visibility = "hidden";
+          }, i * ANIMATION_SPEED);
+          break;
+        case "finish":
+          setTimeout(() => {
+            //controls[0].style.opacity = "1";
+            controls[0].style.visibility = "initial";
+            console.log("finished");
+          }, i * ANIMATION_SPEED);
+          break;
         case "newKey":
           setTimeout(() => {
             tempArray[index].style.height = mainArray[index].style.height;
@@ -484,7 +550,6 @@ export default class Visualizer extends React.Component {
       tempArray[i].style.height = "0px";
       count[i].innerHTML = "";
     }
-    if (isSorted(this.state.array)) this.resetArray();
     this.setState({
       algorithm: event.target.value,
     });
@@ -493,14 +558,4 @@ export default class Visualizer extends React.Component {
 
 function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
-}
-
-function isSorted(array) {
-  for (let i = 1; i < array.length; i++) {
-    if (array[i] < array[i - 1]) {
-      return false;
-      break;
-    }
-  }
-  return true;
 }

@@ -4,9 +4,9 @@ export default function animateInsertionSort(array) {
     // const sortedArray = array.slice().sort((a, b) => a - b);
     // insertionSort(array, animations);
     // console.log(arraysAreEqual(array, sortedArray));
-
+    animations.push(["begin"]);
     insertionSort(array, animations);
-
+    animations.push(["finish"]);
     return animations;
 }
 

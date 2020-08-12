@@ -4,9 +4,9 @@ export default function animateQuickSort(array) {
     // const sortedArray = array.slice().sort((a, b) => a - b);
     // quickSort(array, 0, array.length - 1, animations);
     // console.log(arraysAreEqual(array, sortedArray));
-
+    animations.push(["begin"]);
     quickSort(array, 0, array.length - 1, animations);
-
+    animations.push(["finish"]);
     return animations;
 }
 

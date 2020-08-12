@@ -4,7 +4,9 @@ export default function aimateMergeSort(array) {
     let temp = new Array(array.length);
 
     const sortedArray = array.slice().sort((a, b) => a - b);
+    animations.push(["begin"]);
     mergeSort(array, temp, 0, array.length - 1, animations);
+    animations.push(["finish"]);
     console.log(arraysAreEqual(array, sortedArray));
     console.log(temp);
 

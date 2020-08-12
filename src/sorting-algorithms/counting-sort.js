@@ -3,8 +3,10 @@ export default function animateCountingSort(array, maxNum) {
 
   const sortedArray = array.slice().sort((a, b) => a - b);
   //const quickSortedArray = countingSort(array, maxNum, animations);
+  animations.push(["begin"]);
   countingSort(array, maxNum, animations);
-  console.log(arraysAreEqual(array, sortedArray));
+  animations.push(["finish"]);
+  //console.log(arraysAreEqual(array, sortedArray));
 
   //countingSort(array, maxNum, animations);
 

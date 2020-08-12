@@ -4,9 +4,9 @@ export default function animateBubbleSort(array) {
     // const sortedArray = array.slice().sort((a, b) => a - b);
     // bubbleSort(array, animations);
     // console.log(arraysAreEqual(sortedArray, array));
-
+    animations.push(["begin"]);
     bubbleSort(array, animations);
-
+    animations.push(["finish"]);
     return animations;
 }
 
