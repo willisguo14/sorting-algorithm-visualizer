@@ -9,10 +9,10 @@ import animateQuickSort from "../sorting-algorithms/quick-sort";
 import animateBubbleSort from "../sorting-algorithms/bubble-sort";
 import animateCountingSort from "../sorting-algorithms/counting-sort";
 
-const NUM_ELEMENTS = 10;
+const NUM_ELEMENTS = 20;
 const MIN = 1;
 const MAX = 15;
-const SCALE = 5;
+const SCALE = 15;
 
 const ANIMATION_SPEED = 50;
 
