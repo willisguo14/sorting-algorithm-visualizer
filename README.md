@@ -1,1 +1,1 @@
-This project provides a visualization of common sorting algorithms like merge sort. 
+This project provides a visualization of common sorting algorithms (e.g. merge sort)
