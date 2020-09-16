@@ -1,2 +1,3 @@
-This tools provides a visualization of common sorting algorithms (e.g. merge sort) in action! Also my first time using ReactJS.
+ReactJS app providing visualizations of sorting algorithms (insertion, bubble, merge, quick, counting sort). 
+
 https://willisguo14.github.io/sorting-algorithm-visualizer/ 
